@@ -213,6 +213,16 @@ body {
   padding: 2rem;
 }
 
+.hero-logo {
+  display: block;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: titleReveal 1s var(--ease-out-expo) 0.1s forwards;
+}
+
 .hero-title {
   font-family: var(--font-display);
   font-weight: 700;
@@ -255,6 +265,7 @@ body {
 .hero-cta {
   display: inline-block;
   padding: 1rem 2.5rem;
+  margin-bottom: 4rem;
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
   text-decoration: none;
@@ -462,8 +473,53 @@ body {
 }
 
 .contact-intro {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   font-size: 1.2rem;
+}
+
+.discord-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(88, 101, 242, 0.15);
+  border: 2px solid rgba(88, 101, 242, 0.4);
+  border-radius: 8px;
+  color: #8b9cf7;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.discord-link:hover,
+.discord-link:focus-visible {
+  background: rgba(88, 101, 242, 0.25);
+  border-color: #5865f2;
+  color: #b8c2ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(88, 101, 242, 0.25);
+}
+
+.discord-link:focus-visible {
+  outline: 2px solid #5865f2;
+  outline-offset: 2px;
+}
+
+.discord-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.contact-divider {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 /* ===== Contact Form ===== */
