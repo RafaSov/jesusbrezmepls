@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guild Queremos Injustiça — World of Warcraft. Grupo de amigos buscando reviver a glória de se divertir jogando online.">
   <title>Queremos Injustiça | Guild WoW</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,45 +11,50 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise-overlay"></div>
+  <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
 
-  <nav class="nav">
-    <a href="#hero" class="nav-logo">Queremos Injustiça</a>
-    <ul class="nav-links">
-      <li><a href="#quem-somos">Quem somos</a></li>
-      <li><a href="#objetivo">Objetivo</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+  <div class="noise-overlay" aria-hidden="true"></div>
 
-  <main>
-    <section id="hero" class="hero">
+  <header class="header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#hero" class="nav-logo">Queremos Injustiça</a>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#quem-somos">Quem somos</a></li>
+        <li><a href="#objetivo">Objetivo</a></li>
+        <li><a href="#regras">Regras</a></li>
+        <li><a href="#contato">Fale conosco</a></li>
+      </ul>
+      <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
       <div class="hero-bg">
-        <div class="hero-gradient"></div>
-        <div class="hero-particles" id="hero-particles"></div>
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
       </div>
       <div class="hero-content">
-        <h1 class="hero-title">
+        <h1 id="hero-title" class="hero-title">
           <span class="title-line" data-animate>Queremos</span>
           <span class="title-line title-accent" data-animate>Injustiça</span>
         </h1>
         <p class="hero-subtitle" data-animate>Revivendo a glória de se divertir jogando online</p>
         <a href="#quem-somos" class="hero-cta" data-animate>Descubra mais</a>
       </div>
-      <div class="scroll-indicator">
+      <div class="scroll-indicator" aria-hidden="true">
         <span>Scroll</span>
         <div class="scroll-line"></div>
       </div>
     </section>
 
-    <section id="quem-somos" class="section">
+    <section id="quem-somos" class="section" aria-labelledby="quem-somos-title">
       <div class="section-inner">
-        <h2 class="section-title" data-scroll-animate>
+        <h2 id="quem-somos-title" class="section-title" data-scroll-animate>
           <span class="title-underline">Quem somos</span>
         </h2>
         <div class="section-content">
@@ -56,52 +62,80 @@
             Somos um grupo de amigos buscando reviver a glória de se divertir jogando online!
           </p>
           <p class="section-text" data-scroll-animate>
-            Hoje em maior parte dos jogos a competitividade se tornou a norma, e muitas vezes 
-            existe stress e intriga onde deveria existir diversão e amizade. Caso esteja procurando 
-            um ambiente que respeita seu tempo, onde a vida real é mais importante que o joguinho 
+            Hoje em maior parte dos jogos a competitividade se tornou a norma, e muitas vezes
+            existe stress e intriga onde deveria existir diversão e amizade. Caso esteja procurando
+            um ambiente que respeita seu tempo, onde a vida real é mais importante que o joguinho
             online, será bem vindo!
           </p>
           <p class="section-text" data-scroll-animate>
-            Estamos procurando players novos e veteranos, dispostos a ensinar e ajudar a evoluir 
+            Estamos procurando players novos e veteranos, dispostos a ensinar e ajudar a evoluir
             o personagem — e o mais importante, a se divertir no processo.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="objetivo" class="section section-alt">
+    <section id="objetivo" class="section section-alt" aria-labelledby="objetivo-title">
       <div class="section-inner">
-        <h2 class="section-title" data-scroll-animate>
+        <h2 id="objetivo-title" class="section-title" data-scroll-animate>
           <span class="title-underline">Objetivo</span>
         </h2>
         <div class="section-content">
           <p class="section-text" data-scroll-animate>
-            Nosso foco é matar boss, fazer dg, equipar, rir e se descontrair. 
+            Nosso foco é matar boss, fazer dg, equipar, rir e se descontrair.
             AOTC/KSM/KSH e afins vem de brinde nesse processo.
           </p>
           <p class="section-text" data-scroll-animate>
-            Se o seu foco é jogar pra se divertir, raidar 1 dia na semana, fazer dgs/delves 
-            em equipe, aprender junto sobre o jogo (mecânicas, classe, rotação) e fazer amigos 
+            Se o seu foco é jogar pra se divertir, raidar 1 dia na semana, fazer dgs/delves
+            em equipe, aprender junto sobre o jogo (mecânicas, classe, rotação) e fazer amigos
             no processo, você encontrou o lugar certo.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="section section-contact">
+    <section id="regras" class="section" aria-labelledby="regras-title">
       <div class="section-inner">
-        <h2 class="section-title" data-scroll-animate>
-          <span class="title-underline">Contato</span>
+        <h2 id="regras-title" class="section-title" data-scroll-animate>
+          <span class="title-underline">Regras de convivência</span>
+        </h2>
+        <div class="section-content">
+          <p class="section-text" data-scroll-animate>
+            Não existem regras rígidas, pois não queremos ter a pretensão de que alguém deva nos
+            obedecer. Porém, é sempre importante manter o ambiente com respeito e harmonia,
+            evitando debates políticos e religiosos — a não ser que você esteja conversando com
+            quem está aberto a isso. Além disso, é fundamental o respeito à diversidade: não são
+            tolerados comportamentos homofóbicos, machistas, racistas ou de qualquer cunho
+            discriminatório.
+          </p>
+          <article class="rule-topic" data-scroll-animate>
+            <h3 class="rule-title">Boa convivência no core</h3>
+            <p class="rule-text">
+              O core é apenas 1 dia na semana, bem casual, onde podemos evoluir sem pressa e com
+              foco em diversão. Você não será cobrado de presença ou nada do tipo, mas tenha em
+              mente que, do mesmo jeito que os outros membros do core têm um compromisso com você,
+              você também tem com eles.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section section-contact" aria-labelledby="contato-title">
+      <div class="section-inner">
+        <h2 id="contato-title" class="section-title" data-scroll-animate>
+          <span class="title-underline">Fale conosco</span>
         </h2>
         <div class="contact-content" data-scroll-animate>
           <p class="contact-intro">
-            Interessado em fazer parte? Entre em contato pelo formulário abaixo ou diretamente 
+            Interessado em fazer parte? Entre em contato pelo formulário abaixo ou diretamente
             com <strong>raffinhaup</strong> no Discord ou <strong>raffinhaup#1665</strong> no Battle.net.
           </p>
           <form
+            id="contact-form"
             class="contact-form"
             action="https://formsubmit.co/1b4aa9ab860dfa9a0538cbed18716524"
-            method="POST"
+            method="post"
           >
             <input type="hidden" name="_subject" value="Nova mensagem - Queremos Injustiça">
             <input type="hidden" name="_captcha" value="false">
@@ -110,17 +144,36 @@
 
             <div class="form-group">
               <label for="nome">Nome</label>
-              <input type="text" id="nome" name="Nome" required>
+              <input
+                type="text"
+                id="nome"
+                name="Nome"
+                autocomplete="name"
+                required
+              >
             </div>
 
             <div class="form-group">
               <label for="battlenet">Battle.net</label>
-              <input type="text" id="battlenet" name="Battle.net" placeholder="usuario#1234" required>
+              <input
+                type="text"
+                id="battlenet"
+                name="Battle.net"
+                placeholder="usuario#1234"
+                autocomplete="username"
+                required
+              >
             </div>
 
             <div class="form-group">
               <label for="discord">Discord</label>
-              <input type="text" id="discord" name="Discord" placeholder="usuario#1234" required>
+              <input
+                type="text"
+                id="discord"
+                name="Discord"
+                placeholder="usuario#1234"
+                required
+              >
             </div>
 
             <div class="form-group">
@@ -141,10 +194,10 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <p>© Queremos Injustiça — Guild de World of Warcraft</p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
