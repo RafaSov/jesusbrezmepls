@@ -1,13 +1,17 @@
 /* ===== CSS Variables ===== */
 :root {
-  --color-bg: #0a0a0f;
-  --color-bg-alt: #12121a;
-  --color-surface: #1a1a24;
-  --color-accent: #c9a227;
-  --color-accent-dim: #8b6914;
-  --color-text: #e8e6e3;
-  --color-text-muted: #9a968f;
-  --color-border: rgba(201, 162, 39, 0.2);
+  --color-bg: #0a1624;
+  --color-bg-alt: #0f1e2e;
+  --color-surface: #172a3f;
+  --color-accent: #e86a2b;
+  --color-accent-2: #f5b73b;
+  --color-accent-dim: #b84d1a;
+  --color-text: #e8eef5;
+  --color-text-muted: #8ca3b8;
+  --color-border: rgba(232, 106, 43, 0.25);
+  --color-bg-rgb: 10, 22, 36;
+  --color-accent-rgb: 232, 106, 43;
+  --color-accent-2-rgb: 245, 183, 59;
   --font-display: 'Cinzel', serif;
   --font-body: 'Crimson Text', Georgia, serif;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -91,7 +95,7 @@ body {
 }
 
 .header.scrolled {
-  background: rgba(10, 10, 15, 0.9);
+  background: rgba(var(--color-bg-rgb), 0.9);
   backdrop-filter: blur(12px);
 }
 
@@ -100,7 +104,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 2rem;
-  background: linear-gradient(to bottom, rgba(10, 10, 15, 0.95), transparent);
+  background: linear-gradient(to bottom, rgba(var(--color-bg-rgb), 0.95), transparent);
   transition: background 0.4s var(--ease-out-expo);
 }
 
@@ -194,10 +198,11 @@ body {
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(ellipse 80% 50% at 50% 20%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 105, 20, 0.06) 0%, transparent 40%),
-    radial-gradient(ellipse 40% 30% at 20% 60%, rgba(201, 162, 39, 0.04) 0%, transparent 40%);
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 18%, rgba(var(--color-accent-2-rgb), 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 45% at 50% 40%, rgba(var(--color-accent-rgb), 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 85% 80%, rgba(var(--color-accent-rgb), 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 35% at 15% 70%, rgba(59, 163, 217, 0.09) 0%, transparent 45%);
 }
 
 .hero-particles {
@@ -215,12 +220,31 @@ body {
 
 .hero-logo {
   display: block;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto 1.5rem;
+  width: clamp(180px, 32vw, 300px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 2rem;
+  /* Squircle à la iOS/macOS — 22.37% aproxima o superellipse "continuous" */
+  border-radius: 22.37%;
+  /* Glow em laranja/âmbar (halo do logo) + sombra para profundidade */
+  box-shadow:
+    0 0 0 1px rgba(var(--color-accent-rgb), 0.25),
+    0 18px 60px -12px rgba(var(--color-accent-rgb), 0.45),
+    0 28px 80px -20px rgba(var(--color-accent-2-rgb), 0.35),
+    0 6px 18px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transform: translateY(30px);
   animation: titleReveal 1s var(--ease-out-expo) 0.1s forwards;
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
+}
+
+.hero-logo:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow:
+    0 0 0 1px rgba(var(--color-accent-rgb), 0.4),
+    0 24px 70px -10px rgba(var(--color-accent-rgb), 0.55),
+    0 36px 100px -20px rgba(var(--color-accent-2-rgb), 0.45),
+    0 8px 22px rgba(0, 0, 0, 0.55);
 }
 
 .hero-title {
@@ -249,7 +273,9 @@ body {
 
 .title-accent {
   color: var(--color-accent);
-  text-shadow: 0 0 60px rgba(201, 162, 39, 0.3);
+  text-shadow:
+    0 0 40px rgba(var(--color-accent-rgb), 0.45),
+    0 0 80px rgba(var(--color-accent-2-rgb), 0.25);
 }
 
 .hero-subtitle {
@@ -282,7 +308,7 @@ body {
 .hero-cta:focus-visible {
   background: var(--color-accent);
   color: var(--color-bg);
-  box-shadow: 0 0 40px rgba(201, 162, 39, 0.4);
+  box-shadow: 0 0 40px rgba(var(--color-accent-rgb), 0.45);
 }
 
 .hero-cta:focus-visible {
@@ -566,7 +592,7 @@ body {
 .form-group textarea:focus-visible {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+  box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.2);
 }
 
 .form-group textarea {
@@ -591,7 +617,7 @@ body {
 .form-submit:focus-visible {
   background: var(--color-accent);
   color: var(--color-bg);
-  box-shadow: 0 0 30px rgba(201, 162, 39, 0.3);
+  box-shadow: 0 0 30px rgba(var(--color-accent-rgb), 0.35);
 }
 
 .form-submit:focus-visible {
@@ -648,7 +674,7 @@ body {
     right: 0;
     flex-direction: column;
     padding: 2rem;
-    background: rgba(10, 10, 15, 0.98);
+    background: rgba(var(--color-bg-rgb), 0.98);
     gap: 1.5rem;
   }
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>Queremos Injustiça</strong>
+  <strong>Jesus Brez Me Pls</strong>
 </p>
 
 <p align="center">
@@ -8,7 +8,7 @@
 
 ---
 
-A guild **Queremos Injustiça** está recrutando jogadores para a guild e para o core.
+A guild **Jesus Brez Me Pls** está recrutando jogadores para a guild e para o core.
 
 Somos um grupo de amigos que busca reviver a diversão de jogar online. Hoje, na maior parte dos jogos, a competitividade se tornou a norma — e muitas vezes há estresse e intriga onde deveria existir diversão e amizade. Se você procura um ambiente que respeita seu tempo, em que a vida real vem antes do jogo, será bem-vindo!
 

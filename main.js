@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Queremos Injustiça - Landing Page
+ * Jesus Brez Me Pls - Landing Page
  * @description Scroll animations, particles, parallax e interações
  */
 /** Configuração do Intersection Observer para animações de scroll */

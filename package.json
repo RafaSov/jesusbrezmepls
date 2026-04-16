@@ -1,11 +1,11 @@
 {
-  "name": "queremos-injustissa",
+  "name": "jesusbrezmepls",
   "version": "1.0.0",
-  "description": "Landing page da guild Queremos Injustiça - World of Warcraft",
+  "description": "Landing page da guild Jesus Brez Me Pls - World of Warcraft",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "serve": "npx --yes serve . -p 3000"
+    "serve": "npx --yes serve . -p 4001"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
