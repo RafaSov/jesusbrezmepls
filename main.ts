@@ -3,6 +3,36 @@
  * @description Scroll animations, particles, parallax e interações
  */
 
+/**
+ * Hidrata o DOM com valores do window.APP_CONFIG (definido em config.js).
+ * Roda ANTES de qualquer outra inicialização para que o formulário e os links
+ * tenham os valores corretos antes de qualquer interação do usuário.
+ *
+ * Elementos marcadores no HTML:
+ *   - [data-config="discord-invite"]  → recebe o href do convite do Discord
+ *   - [data-config="form"]            → form que recebe a action (submitUrl)
+ *   - [data-config="form-subject"]    → input oculto que recebe o assunto do e-mail
+ */
+function hydrateConfig(): void {
+  const config = window.APP_CONFIG;
+  if (!config) {
+    console.warn('[config] window.APP_CONFIG não foi carregado. Verifique se config.js está antes de main.js.');
+    return;
+  }
+
+  document.querySelectorAll<HTMLAnchorElement>('[data-config="discord-invite"]').forEach((el) => {
+    el.href = config.discord.inviteUrl;
+  });
+
+  document.querySelectorAll<HTMLFormElement>('[data-config="form"]').forEach((form) => {
+    form.action = config.form.submitUrl;
+  });
+
+  document.querySelectorAll<HTMLInputElement>('[data-config="form-subject"]').forEach((input) => {
+    input.value = config.form.subject;
+  });
+}
+
 /** Configuração do Intersection Observer para animações de scroll */
 const SCROLL_OBSERVER_OPTIONS: IntersectionObserverInit = {
   root: null,
@@ -194,6 +224,7 @@ function initHeroParallax(): void {
  * Inicializa a aplicação quando o DOM estiver pronto
  */
 function init(): void {
+  hydrateConfig();
   initScrollAnimations();
   initHeaderScrollEffect();
   initMobileNav();

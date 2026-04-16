@@ -1,0 +1,61 @@
+/**
+ * Configuração global do site — FONTE ÚNICA DE VERDADE
+ * ----------------------------------------------------
+ * Edite APENAS este arquivo para alterar links, e-mail do formulário e nomes.
+ * Depois rode `npm run build` (ou deixe `npm run watch` rodando em outro terminal)
+ * para regenerar o `config.js` servido ao navegador.
+ *
+ * Como funciona: este script é carregado ANTES do `main.js` e expõe
+ * `window.APP_CONFIG`. O `main.ts` aplica esses valores ao DOM em runtime,
+ * procurando elementos com o atributo `data-config="..."`.
+ *
+ * Se você precisar adicionar um novo campo:
+ *   1) Acrescente no objeto `APP_CONFIG` abaixo.
+ *   2) Marque o(s) elemento(s) no HTML com `data-config="sua-chave"`.
+ *   3) Trate essa chave em `hydrateConfig()` dentro de `main.ts`.
+ */
+
+interface AppConfig {
+  /** Nome da guilda — usado no assunto do e-mail do formulário. */
+  guildName: string;
+  /** Tagline/subtítulo da guilda (referência; não é hidratado automaticamente). */
+  guildTagline: string;
+
+  discord: {
+    /**
+     * Link de convite do Discord (formato `https://discord.gg/XXXX`).
+     * Aplicado ao botão "Entrar no Discord da guilda" na seção de contato.
+     */
+    inviteUrl: string;
+  };
+
+  form: {
+    /**
+     * Endpoint do FormSubmit que recebe o formulário de contato.
+     * O hash na URL representa o e-mail de destino — para TROCAR O E-MAIL
+     * que recebe as mensagens, gere um novo endpoint em https://formsubmit.co/
+     * com o e-mail desejado e cole o resultado aqui.
+     */
+    submitUrl: string;
+    /** Assunto do e-mail gerado pelo formulário de contato. */
+    subject: string;
+  };
+}
+
+interface Window {
+  APP_CONFIG: AppConfig;
+}
+
+window.APP_CONFIG = {
+  guildName: 'Jesus Brez Me Pls',
+  guildTagline: 'Guilda de World of Warcraft',
+
+  discord: {
+    inviteUrl: 'https://discord.gg/hvghudJE8y',
+  },
+
+  form: {
+    submitUrl: 'https://formsubmit.co/1b4aa9ab860dfa9a0538cbed18716524',
+    subject: 'Nova mensagem - Jesus Brez Me Pls',
+  },
+};

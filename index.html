@@ -79,7 +79,7 @@
             grupo que respeita seu tempo e sabe que a vida real vem antes da vida virtual, seja bem-vindo!
           </p>
           <p class="section-text" data-scroll-animate>
-            A guilda está no servidor Area52, mas recebemos players de qualquer servidor e facção.
+            A guilda está no servidor Azralon, mas recebemos players de qualquer servidor e facção.
             Atualmente estamos com o horário de raid definido para todas as quintas-feiras, das 19h30 às
             22h30.
             Procuramos todas as classes e specs.
@@ -153,7 +153,8 @@
             ou preencha o formulário abaixo.
           </p>
           <a
-            href="https://discord.gg/hvghudJE8y"
+            href="#"
+            data-config="discord-invite"
             target="_blank"
             rel="noopener noreferrer"
             class="discord-link"
@@ -166,10 +167,10 @@
           <form
             id="contact-form"
             class="contact-form"
-            action="https://formsubmit.co/1b4aa9ab860dfa9a0538cbed18716524"
+            data-config="form"
             method="post"
           >
-            <input type="hidden" name="_subject" value="Nova mensagem - Jesus Brez Me Pls">
+            <input type="hidden" name="_subject" data-config="form-subject">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" id="form-next" value="">
@@ -231,6 +232,7 @@
     <p>© Jesus Brez Me Pls — Guilda de World of Warcraft</p>
   </footer>
 
+  <script src="config.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
